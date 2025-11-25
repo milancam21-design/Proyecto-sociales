@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- MANIFEST PARA PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <title>Neocolonialismo en Argentina – App Web</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f2f7ff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4a90e2, #6ed3cf);
+      padding: 40px;
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #4a90e2;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      background: #4a90e2;
+      color: white;
+    }
+
+    .btn-install {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      background: #4a90e2;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Neocolonialismo en Argentina</h1>
+  <p>Minería extranjera, presión económica y explotación del territorio nacional</p>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Historia</a>
+    <a href="#mineria">Minería</a>
+    <a href="#influencia">Influencia extranjera</a>
+    <a href="#recursos">Recursos</a>
+  </nav>
+</header>
+
+<section id="inicio">
+  <div class="card">
+    <h2>Bienvenido</h2>
+    <p>
+      Esta aplicación explora cómo diferentes potencias económicas han ejercido influencias sobre Argentina desde el siglo XX hasta la actualidad, especialmente a través de actividades extractivas como la minería a gran escala.  
+    </p>
+    <p>Aprende, explora, descubre y comprende cómo opera el neocolonialismo moderno.</p>
+  </div>
+</section>
+
+<section id="historia">
+  <div class="card">
+    <h2>Línea Histórica del Neocolonialismo</h2>
+    <ul>
+      <li><strong>1955–1980:</strong> Entradas de corporaciones mineras extranjeras.</li>
+      <li><strong>1990–2001:</strong> Apertura indiscriminada al capital foráneo y privatizaciones.</li>
+      <li><strong>2003–2015:</strong> Expansión de proyectos megamineros a cielo abierto.</li>
+      <li><strong>2016–2024:</strong> Incremento de influencias geopolíticas (EE.UU., China, Canadá).</li>
+    </ul>
+  </div>
+</section>
+
+<section id="mineria">
+  <div class="card">
+    <h2>Minería Extranjerizada</h2>
+    <p>La mayor parte de la actividad minera en Argentina se encuentra en manos de empresas internacionales...</p>
+    <p>Litio, oro, plata y cobre son los recursos más codiciados.</p>
+  </div>
+</section>
+
+<section id="influencia">
+  <div class="card">
+    <h2>Influencias Extranjeras</h2>
+    <p>El poder económico global determina el ritmo de explotación...</p>
+    <p>Argentina se convierte en proveedor de recursos estratégicos para potencias como China, Estados Unidos y la Unión Europea.</p>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="card">
+    <h2>Recursos y Descargas</h2>
+    <p>Próximamente: PDFs, mapas interactivos, estadísticas, gráficos...</p>
+  </div>
+</section>
+
+<footer>
+  <p>App Web Educativa — Neocolonialismo en Argentina © 2025</p>
+</footer>
+
+<button class="btn-install" id="btnInstall">Instalar App</button>
+
+<script>
+  let installPrompt;
+  const btn = document.querySelector("#btnInstall");
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    installPrompt = e;
+    btn.style.display = "block";
+  });
+
+  btn.addEventListener("click", () => {
+    btn.style.display = "none";
+    installPrompt.prompt();
+  });
+</script>
+
+</body>
+</html>
